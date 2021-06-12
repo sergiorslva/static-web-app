@@ -14,7 +14,7 @@ namespace Functions.Services
             CloudStorageAccount storageAccount;
             try
             {
-                storageAccount = CloudStorageAccount.Parse("DefaultEndpointsProtocol=https;AccountName=sgglicemia;AccountKey=fCRoCYbH+Bn3OtpetVBhNeO3snDUF7Utc2bIkljiQh2/x0+WierBGlyUTbh/VS+8UxaMqmgfJEvYdoGOiRXmag==;EndpointSuffix=core.windows.net");
+                storageAccount = CloudStorageAccount.Parse(Environment.GetEnvironmentVariable("StorageAccountConnetion"));
             }
             catch (FormatException)
             {
