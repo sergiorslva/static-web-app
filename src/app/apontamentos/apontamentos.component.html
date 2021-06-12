@@ -1,0 +1,25 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Data</th>
+      <th scope="col">Valor</th>
+      <th scope="col" colspan="2">Ação</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let apontamento of apontamentos">
+      <td>{{apontamento.data | date: 'dd/MM/yyyy' }}</td>
+      <td>{{apontamento.valor}}</td>
+      <td>
+        <a [routerLink]="['/editar-apontamento', apontamento.partitionKey, apontamento.rowKey]">
+          <i class="bi bi-pencil-square"></i>
+        </a>
+      </td>
+      <td>
+        <a href="#" (click)="excluir($event, apontamento)">
+          <i class="bi bi-trash"></i>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
